@@ -1,0 +1,24 @@
+<script>
+ class student{
+     constructor(name,age,cls){
+         this.myname=name;
+         this.myage=age;
+         this.cls=cls;
+     }
+   biodata(){
+       console.log(`this is ${this.myname}.And iam ${this.myage} old.and i read in class ${this.cls}`);
+   }
+ }
+class player extends student{
+constructor(name,age,cls,game){
+    super(name,age,cls); 
+    this.mygame=game;
+}
+    nepal(){
+    console.log(`${super.biodata()}.and i play ${this.mygame}`);
+}
+}
+
+let obj1=new student("aayam",22,15,'football'); 
+obj1.nepal();
+</script> 

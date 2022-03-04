@@ -1,0 +1,35 @@
+<script>
+
+//promise prducer
+const poj=new Promise((resolve,reject)=>{
+
+    setTimeout(() => {
+        let roll_no=[1,2,3,4,5];
+        resolve(roll_no);
+    }, 2000);
+})
+
+const getBiodata=(indexData)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout((indexData) => {
+            let biodata={
+              name:'aayam',
+                age:22
+            }
+            resolve(`my name is ${biodata.name} . and iam ${biodata.age}`);
+        }, 2000 ,indexData);
+    })
+}
+
+
+async function getData(){
+    const rollnodata= await poj;
+    console.log(rollnodata);
+    const biodatas=await getBiodata(rollnodata[1]);
+    console.log(biodatas);
+}
+const getname=getData().then((myname)=>{
+    console.log(myname);
+})
+getData();
+</script>
